@@ -8,7 +8,7 @@ public class StringBufferEx1 {
 	 * 
 	 * <StringBuffer 생성자>
 	 * StringBuffer()는 버퍼의 크기를 16으로 초기화하여 생성한다.
-	 * StringBuffer(int length)는 버퍼의 크기를 length+16으로 초기화하여 생성한다.
+	 * StringBuffer(int length)는 버퍼의 크기를 length로 초기화하여 생성한다.
 	 * StringBuffer(String s)는 버퍼의 크기를 s.length+16으로 초기화하여 생성한다.
 	 * 
 	 * <StringBuffer의 변경 : 추가(append)>
