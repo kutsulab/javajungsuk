@@ -25,7 +25,8 @@ public class MathEx1 {
 	 *  정수부분 첫째자리는 10^0자리이므로 0
 	 *  정수부분 둘째자리는 10^1자리이므로 1
 	 */
-
+	
+	
 	private static double myCeil(double val, int place) {
 		double adjust = pow (10.0, -place-1);
 		return ceil(val * adjust)/adjust;
@@ -44,6 +45,29 @@ public class MathEx1 {
 	private static double myRint(double val, int place) {
 		double adjust = pow (10.0, -place-1);
 		return rint(val * adjust)/adjust;
+	}
+	
+	private static double myRandom() {
+		// 0 .0 이상 1.0 미만의 double을 아무거나 반환
+		return random();
+	}
+	
+	private static int myRandom(int start, int end) {
+		// start 이상 end 이하의 정수를 아무거나 반환
+		int count = end - start + 1;
+		return (int)(random() * count) + start;
+	}
+	
+	
+	
+	private static void printMyRandom() {
+		out.println("myRandom() = "+myRandom());
+		return;
+	}
+	
+	private static void printMyRandom(int start, int end) {
+		out.println("myRandom("+start+", "+end+") = "+myRandom(start,end));
+		return;
 	}
 	
 	private static void printMyCeil(double val, int place) {
@@ -69,11 +93,13 @@ public class MathEx1 {
 	
 	public static void main(String[] args) {
 		double val = 90.7552;
+	
 		printMyRound(val, -1); // 90.7552를 10^-1 자리에서 반올림
 		printMyRound(val, -3);
-		
 		out.println();
-		out.printf("random()=%f%n", random()); // 0이상 1미만의 임의의 double
+		
+		printMyRandom(); // 0이상 1미만의 임의의 double 출력
+		printMyRandom(0,2); // 0이상 2이하의 임의의 정수 출력
 		out.printf("abs(%3.1f)=%3.1f%n", -1.1, abs(-1.1)); // 절댓값
 		out.printf("max(%3.1f, %3.1f)=%3.1f%n", -0.9, 1.8, max(-0.9, 1.8)); // 둘 중 큰 값
 		out.printf("min(%3.1f, %3.1f)=%3.1f%n", -0.9, 1.8, min(-0.9, 1.8)); // 둘 중 작은 값
@@ -89,5 +115,4 @@ public class MathEx1 {
 		printMyCeil(-1.5,-1); // 올림
 		printMyFloor(-1.5,-1); // 버림
 	}
-
 }
