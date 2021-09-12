@@ -38,89 +38,29 @@ public class VarEx0 {
 	 * 
 	 */
 	
+	// 출력하는 메서드를 분리
+	private static void printKorAge(String name, int birthYear, int thisYear) {
+		System.out.println("=======================================");
+		System.out.println(name+"의 출생년도는 "+birthYear+"년이고 올 해는 "+thisYear+"년이다.");
+		System.out.println("한국식 나이는 (올해의 연도 - 출생년도 + 1)로 계산된다.");
+		System.out.print("이를 토대로 한국식 나이를 계산해보면, ");
+		System.out.println(name+"의 한국식 나이는 "+getKorAge(birthYear,thisYear)+"세이다.");
+		System.out.println("=======================================");
+		return;
+	}
+	
+	// 나이를 구하는 메서드를 따로 분리
+	private static int getKorAge(int birthYear, int thisYear) { 
+		int korAge = thisYear - birthYear + 1;
+		return korAge;
+	}
+	
+
 	public static void main(String[] args) {
 		
-		System.out.println("=======================================");
+		printKorAge("철수",1996,2021); // 이름, 출생년도, 올해 연도를 매개변수로 하여 한국식 나이를 계산, 출력해줌.
+		printKorAge("영희",1991,2022);
 		
-		System.out.println("철수는 1996년에 태어났고 올 해는 2021년이다."); // 변수를 설정하지 않고 일일이 값을 입력하는 경우
-		System.out.println("철수의 한국식 나이는 몇 살일까용?");
-		System.out.println("한국식 나이 : 올해의 연도 - 태어난 연도 + 1");
-		
-		System.out.print("올 해의 연도 : ");
-		System.out.println(2021);
-		
-		System.out.print("태어난 연도 : ");
-		System.out.println(1996);
-		
-		System.out.print("철수의 한국식 나이 : ");
-		System.out.println(2021-1996+1);
-		
-		System.out.println("=======================================");
-		
-		System.out.println("영희는 1991년에 태어났고 올 해는 2022년이다."); // 값을 일일이 전부 바꿔야한다.
-		System.out.println("영희의 한국식 나이는 몇 살일까용?");
-		System.out.println("한국식 나이 : 올해의 연도 - 태어난 연도 + 1");
-		
-		System.out.print("올 해의 연도 : ");
-		System.out.println(2022);
-		
-		System.out.print("태어난 연도 : ");
-		System.out.println(1991);
-		
-		System.out.print("영희의 한국식 나이 : ");
-		System.out.println(2022-1991+1);
-
-		System.out.println("=======================================");
-
-		String name = "철수"; // 변수를 사용하면 코드를 여러번 재사용할 때 유리해진다.
-		int thisYear = 2021; 	
-		int birthYear = 1996;
-		int korAge = thisYear - birthYear + 1;
-		
-		System.out.print(name);
-		System.out.print("은(는) ");
-		System.out.print(birthYear);
-		System.out.print("년에 태어났고 올 해는 ");
-		System.out.print(thisYear);
-		System.out.println("년이다.");
-		System.out.println(name+"의 한국식 나이는 몇 살일까용?");
-		System.out.println("한국식 나이 : 올해의 연도 - 태어난 연도 + 1");
-		
-		System.out.print("올 해의 연도 : ");
-		System.out.println(thisYear);
-		
-		System.out.print("태어난 연도 : ");
-		System.out.println(birthYear);
-		
-		System.out.print(name+"의 한국식 나이 : ");
-		System.out.println(korAge);
-		
-		System.out.println("=======================================");
-		
-		name = "영희"; // 이미 선언된 변수에 저장된 값을 변경할 때는 변수 이름만 선언 후 새로 저장
-		thisYear = 2022;
-		birthYear = 1991;
-		korAge = thisYear - birthYear + 1; // age를 불러오면 위에서 저장된 age가 다시 불러와지기 때문에 다시 초기화 해줘야한다.
-		
-		System.out.print(name); // 아래는 위의 코드를 싹 다 재사용
-		System.out.print("은(는) ");
-		System.out.print(birthYear);
-		System.out.print("년에 태어났고 올 해는 ");
-		System.out.print(thisYear);
-		System.out.println("년이다.");
-		System.out.println(name+"의 한국식 나이는 몇 살일까용?");
-		System.out.println("한국식 나이 : 올해의 연도 - 태어난 연도 + 1");
-		
-		System.out.print("올 해의 연도 : ");
-		System.out.println(thisYear);
-		
-		System.out.print("태어난 연도 : ");
-		System.out.println(birthYear);
-		
-		System.out.print(name+"의 한국식 나이 : ");
-		System.out.println(korAge);
-		
-		System.out.println("=======================================");
 	}
 
 }
