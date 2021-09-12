@@ -1,6 +1,7 @@
 
 public class VarEx0 {
 	/* Java의 정석 3판 p.20 내용 정리 : 변수의 선언과 초기화
+	 * https://kutsulab.tistory.com/9
 	 * 
 	 * [변수]
 	 * 단 하나의 데이터를 저장할 수 있는 메모리 공간
