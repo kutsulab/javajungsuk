@@ -1,6 +1,8 @@
 
 public class WrapperEx1 {
-	/*
+	
+	/* Java의 정석 3판 p.491 예제 9-23
+	 * 
 	 * [래퍼 클래스]
 	 * 
 	 * 1. 래퍼클래스 : 기본형 변수를 객체로 다룰 때 사용
@@ -27,6 +29,13 @@ public class WrapperEx1 {
 	 *		2) .compareTo(Integer i) : 두 Integer 객체의 value를 비교하여 대소관계를 정수로 반환
 	 *			(호출 객체를 기준으로, 호출객체의 value가 크면 양수, 작으면 음수, 같으면 0 반환)
 	 *		3) .toString() : 객체의 value를 문자열로 출력하도록 오버라이드
+	 *
+	 * 5. 그 외 래퍼클래스의 메서드
+	 *      1) MAX_VALUE : 해당 타입이 저장할 수 있는 최댓값
+	 *      2) MIN_VALUE : 해당 타입이 저장할 수 있는 최솟값
+	 *      3) SIZE : 해당 타입 데이터의 크기 (bit)
+	 *      4) BYTE : 해당 타입 데이터의 크기 (byte : bit * 8 = byte)
+	 *      5) TYPE : 해당 타입을 문자열로 출력
 	 */
 
 	
