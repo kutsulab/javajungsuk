@@ -49,10 +49,10 @@ public class RandomEx3 {
 	
 	public static void main(String[] args) {
 		
-		int[] rdm1 = fillRandomInt(new int[10], 1, 20);
+		int[] rdm1 = fillRandomInt(new int[10], 1, 20); // 1이상 20 이하의 임의의 정수를 채워넣음
 		System.out.println(Arrays.toString(rdm1));
 		
-		int[] rdm2 = fillRandomInt(new int[10], new int[] {1,2,3,4,5});
+		int[] rdm2 = fillRandomInt(new int[10], new int[] {1,2,3,4,5}); // 배열 {1,2,3,4,5}의 임의의 인덱스에 있는 정수를 채워넣음
 		System.out.println(Arrays.toString(rdm2));
 	}
 
