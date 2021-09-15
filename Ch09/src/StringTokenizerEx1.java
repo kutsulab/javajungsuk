@@ -9,7 +9,10 @@ public class StringTokenizerEx1 {
 	 * 
 	 * 문자열을 구분자를 기준으로 여러 개의 Token으로 잘라내여 활용하는 클래스
 	 * 다른 방법과 달리 정규식을 사용하지 않고 사용하는 차별점이 있음
-	 * 다만, 구분자로 단 하나의 문자밖에 쓰지 못 함. 복잡한 구분자로 나눌 때는 정규식을 사용할 필요가 있다.
+	 * 
+	 * 다만, 구분자를 하나씩 인식한다는 점이 한계.
+	 * 두 글자 이상의 복잡한 구분자로 나누거나 복잡한 형식에 맞춰 쪼갤 때는 정규식을 사용할 필요가 있다.
+	 * (예를 들어 ",.#+"을 구분자로 지정하면 "," "." "#" "+" 각각의 문자들이 구분자로 취급됨.)
 	 * 
 	 *  1. 생성자
 	 *  	StringTokenizer (String str, String delim) : 문자열 지정, 구분자 지정
@@ -24,8 +27,6 @@ public class StringTokenizerEx1 {
 	 * 
 	 * String 객체.split(String regex) : 문자열을 regex로 쪼개서 배열로 반환
 	 * Scanner 객체.useDelimiter(String pattern) : Scanner 객체의 내용을 pattern을 구분자로 한 Scanner 객체 반환
-	 * 
-	 * 
 	 * 
 	 */
 	
