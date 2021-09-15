@@ -3,7 +3,7 @@ import java.util.*;
 
 public class StringTokenizerEx2 {
 
-	/* Java의 정석 3판 p.514 예제 9-38 내용 확인 및 연습 : StringTokenizer 클래스
+	/* Java의 정석 3판 p.515 예제 9-39 내용 확인 및 연습 : StringTokenizer 클래스의 생성자 - 구분자도 token으로 취급하는 방법
 	 * 
 	 * [StringTokenizer]
 	 * 
@@ -32,10 +32,13 @@ public class StringTokenizerEx2 {
 	
 	public static void main(String[] args) {
 		
-		String expression = "x=100*(200+300)/2";
-		String delim = "+-*/=()";
+		String expression = "x=100*(200+300)/2"; // 원본 문자열
+		System.out.println("expression : " + expression);
+		
+		String delim = "+-*/=()"; // 구분자 지정. 이때 구분자 + - * / = ( ) 는 각각 구분자로 취급된다.
+		
 		StringTokenizer st = new StringTokenizer(expression, delim, true);
-		// 구분자도 token으로 취급
+		// 구분자도 token으로 취급.
 		
 		
 		while (st.hasMoreTokens()) { // 토큰을 더 가지고 있니?
