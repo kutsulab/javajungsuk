@@ -3,7 +3,7 @@ import java.util.*;
 
 	/* Java의 정석 3판 p.516 예제 9-41 내용 확인 및 연습
 	 * 
-	 * StringTokenizer 클래스의 활용 - 큰 규모로 쪼개고, 작은 규모로 쪼개기
+	 * StringTokenizer 클래스의 활용 - 한글로 된 숫자를 단위를 기준으로 구분자로 쪼갠뒤 아라비아 숫자로 변환하기
 	 * 
 	 * [StringTokenizer]
 	 * 
