@@ -58,7 +58,8 @@ public class CalendarEx3 {
 		
 		StringBuffer sb = new StringBuffer(); //시간을 문자열로 환산한 것을 저장하는 StringBuffer
 		
-		for (int i=0; i < TIME_UNIT.length; i++) {
+		for (int i=0; i < TIME_UNIT.length; i++) { //큰 단위 -> 작은 단위 순으로 해야 정확히 나눌 수 있음.
+			
 			String tmp = second/TIME_UNIT[i] + TIME_UNIT_NAME[i]; //각 단위로 나눈 몫을 단위별로 문자화
 			second %= TIME_UNIT[i]; // second에 second를 TIME_UNIT[i]로 나눈 나머지를 저장한다.		
 			sb.append(tmp); // 버퍼에 tmp를 추가한다.				
