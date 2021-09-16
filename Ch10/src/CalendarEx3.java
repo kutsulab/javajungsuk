@@ -13,6 +13,10 @@ public class CalendarEx3 {
 	 * 4. 1000으로 나눈 나머지 millisecond는 무시하고 보통 second를 기준으로 시간차를 생각.
 	 * 5. 이를 다시 적절한 방식으로 시간차, 혹은 날짜 차이로 단위 환산해서 사용하면 됨
 	 * 
+	 * [두 날짜, 시간의 전후관계 파악]
+	 * 1. 두 시간대의 차가 양수인지, 음수인지로 시간의 전후관계를 파악할 수 있음.
+	 * 2. 혹은, boolean after(Object when) boolean before(Object when)으로 비교 가능
+	 * 
 	 */
 	
 	public static void main(String[] args) {
