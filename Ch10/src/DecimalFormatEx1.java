@@ -3,14 +3,31 @@ import java.text.*;
 
 public class DecimalFormatEx1 {
 	
-	/* Java의 정석 3판 p.542 예제 10-10 내용 확인
-	 *  : 자주 쓰이는 DecimalFormat들
+	/* Java의 정석 3판 p.542 예제 10-10 내용 확인 : DecimalFormat
 	 * 
+	 *  [형식화]
+	 *  DecimalFormat(String Format) : 형식을 지정하여 객체 생성
+	 *  
+	 *  [형식에 맞는 문자 출력]
+	 *  DecimalFormat 객체.format(double number) : 형식화할 숫자를 넣으면 문자열로 출력
+	 *  
+	 *  [Decimal Format의 여러가지 Format]
+	 *  0 : 십진수 (값이 없으면 0)
+	 *  # : 십진수
+	 *  . : 소숫점
+	 *  - : 음수부호
+	 *  , : 단위 구분자
+	 *  E0 : 지수
+	 *  ; : 패턴 구분자
+	 *  % : 퍼센트
+	 *  \u2030 : 퍼밀 (퍼센트 * 10)
+	 *  \u00A4 : 통화
+	 *  ' : escape 문자
 	 */
 	public static void main(String[] args) {
-		double number = 1234567.89;
+		double number = 1234567.89; // 원본 double값
 		System.out.println(number);
-		
+
 		String[] pattern = {
 				"0", // 일반적인 십진수 표현 (값 없다 -> 0)
 				"#", // 일반적 십진수 표현
@@ -47,8 +64,8 @@ public class DecimalFormatEx1 {
 		
 		
 		for (int i=0; i < pattern.length; i++) {
-			DecimalFormat df = new DecimalFormat(pattern[i]);
-			String result = df.format(number);
+			DecimalFormat df = new DecimalFormat(pattern[i]); // 형식 객체
+			String result = df.format(number); // .format(double number) : 실수값을 형식에 맞게 문자열로 반환(형식화)
 			
 			System.out.printf("%19s : %s%n",pattern[i],result);
 		}
