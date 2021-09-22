@@ -50,6 +50,7 @@ public class ArrayListEx2 {
 	 *  (Collection)
 	 *  	int hashCode() : 컬렉션의 hashCode를 반환
 	 *  	int size() : 해당 컬렉션에 저장된 객체의 갯수를 반환
+	 *  	int capacity() : 실제 저장할 수 있는 객체의 최대 갯수(현재 ArrayList가 참조하고 있는 배열의 length)
 	 *  	boolean isEmpty() : 해당 컬렉션이 비어있으면 true, 아니면 false
 	 *  
 	 *  9. ArrayList 복제
@@ -77,6 +78,7 @@ public class ArrayListEx2 {
 		int srcLength = source.length();
 		
 		List list = new ArrayList(srcLength/LIMIT + 10);
+		System.out.println(list);
 		
 		for (int i=0; i < srcLength; i += LIMIT) {
 			
