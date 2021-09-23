@@ -20,18 +20,24 @@ public class StackEx1 {
 	private static void goURL(String url) {
 		back.push(url); // back 스택에 url을 저장
 		if(!forward.empty()) forward.clear(); // 새로운 페이지를 이동 -> forward 스택을 비움
+		System.out.println("====='"+url+"' 사이트로 이동 후=====");
+		printStatus();
 		return;
 	}
 	
 	private static void goBack() {
 		if (!back.empty()) { // back 스택이 비어져있지 않다면
 			forward.push(back.pop()); // back에서 추출(pop)한 객체를 forward에 저장
+			System.out.println("=====뒤로 가기 버튼을 누른 후=====");
+			printStatus();
 		}
 	}
 	
 	private static void goForward() {
 		if (!forward.empty()) { //forward가 비어져있지 않다면
 			back.push(forward.pop()); // forward에서 추출(pop)한 객체를 back에 저장
+			System.out.println("=====앞으로 가기 버튼을 누른 후=====");
+			printStatus();
 		}
 	}
 	
@@ -49,23 +55,12 @@ public class StackEx1 {
 		goURL("2. MicroSoft");
 		goURL("3. Amazon");
 		goURL("4. Apple");
-		printStatus();
 		
 		goBack();
-		System.out.println("=====뒤로가기 버튼을 누른 후=====");
-		printStatus();
-		
 		goBack();
-		System.out.println("=====뒤로가기 버튼을 누른 후=====");
-		printStatus();
 		
 		goForward();
-		System.out.println("=====앞으로 가기 버튼을 누른 후 =====");
-		printStatus();
 		
-		goURL("5. Yahoo");
-		System.out.println("===== 새로운 사이트 Yahoo로 이동 후 =====");
-		printStatus();
+		goURL("5. Yahoo"); // 사이트를 새로 이동했으므로 forward가 비워짐
 	}
-
 }
