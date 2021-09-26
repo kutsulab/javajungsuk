@@ -179,7 +179,14 @@ public class MyVector {
 	
 	@Override
 	public String toString() {
-		return Arrays.toString(toArray());
+		String tmp = "[";
+		for (int i=0; i<size; i++) {
+			if (i!=0) tmp += ", ";
+			tmp += data[i].toString();
+			if (i==size-1) tmp +="]";
+		}
+		
+		return tmp;
 	}
 	
 }
