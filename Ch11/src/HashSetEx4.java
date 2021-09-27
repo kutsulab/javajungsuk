@@ -43,7 +43,7 @@ public class HashSetEx4 {
 		it = setB.iterator();
 		
 		while (it.hasNext()) {
-			union.add(it.next());
+			union.add(it.next()); //HashSet의 add 메서드는 중복되면 추가되지 않으므로 알아서 합집합 처리가 된다.
 		}
 		
 		System.out.println("A∪B = "+union);
@@ -56,8 +56,8 @@ public class HashSetEx4 {
 			
 		while(it.hasNext()) {
 			Object elementA = it.next();
-			if (setB.contains(elementA)) {
-				interSection.add(elementA);
+			if (setB.contains(elementA)) { //setB에서 해당 A의 객체를 가지고 있으면
+				interSection.add(elementA); //공통된 것이므로 교집합 interSection에 추가
 			}
 		} // while문 끝
 		
@@ -70,8 +70,8 @@ public class HashSetEx4 {
 		it = setA.iterator(); 
 		while (it.hasNext()) {
 			Object elementA = it.next();
-			if(!setB.contains(elementA)) { //setB에 현재 객체가 없다면
-				differenceAB.add(elementA); // A-B에 추가
+			if(!setB.contains(elementA)) { //setB에 현재 객체(A의 원소)가 없다면
+				differenceAB.add(elementA); // setB에 없는 setA만의 원소이므로 A-B에 추가
 			}
 		}
 		System.out.println("A-B = "+differenceAB);
@@ -83,8 +83,8 @@ public class HashSetEx4 {
 		it = setB.iterator(); 
 		while (it.hasNext()) {
 			Object elementB = it.next();
-			if(!setA.contains(elementB)) { //SetA에 현재 객체가 없다면
-				differenceBA.add(elementB); //B-A에 추가
+			if(!setA.contains(elementB)) { //SetA에 현재 객체(B의 원소)가 없다면
+				differenceBA.add(elementB); //setA에 없는 setB만의 원소이므로 B-A에 추가
 			}
 		}
 		System.out.println("B-A = "+differenceBA);
