@@ -18,10 +18,8 @@ public class AsciiPrint {
 		char ch = ' '; //' '를 문자코드로 환산하면 32이다.
 		
 		for(; ch<127; ch++) {
-			System.out.print(ch);
-			if (ch%10==1) System.out.println();
+			System.out.println("'"+ch+"'의 코드 : "+(int)ch);
 			// 문자의 코드값을 1씩 증가시켜가면서 문자를 출력함. 이 출력된 순서가 문자의 오름차순 정렬 순서다.
-			
 		}
 		
 	}
