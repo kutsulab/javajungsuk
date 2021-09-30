@@ -36,7 +36,7 @@ public class GenericTest {
 		
 		System.out.println("ArrayList list1 : "+list1);
 		
-		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		ArrayList<Integer> list2 = new ArrayList<Integer>(); // Integer 타입 객체만 저장할 수 있음
 		list2.add(10);
 		list2.add(20);
 		//list2.add("30");
