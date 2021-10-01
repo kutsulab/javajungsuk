@@ -18,20 +18,51 @@ class Student implements Comparable<Student> {
 	private int studentClass; // 반
 	private int studentNumber; // 번호
 	
-	// 학년, 반, 번호를 기반으로 학번을 생성 (예 : 2학년 7반 5번 -> 20705)
+	// 이 학생 객체의 학번을 반환
 	public int getStudentID() {
+		return getStudentID(studentGrade, studentClass, studentNumber);
+	}
+	
+	//학년, 반, 번호를 인수로 하여 학번을 반환// (예 : 2학년 7반 5번 -> 20705)
+	static int getStudentID(int studentGrade, int studentClass, int studentNumber) {
+		if (!isValidStudent(studentGrade, studentClass, studentNumber)) {
+			return 0; // 유효하지 않은 학년, 반, 이름이면 0을 반환함
+		}
+		
 		String strGrade = String.valueOf(studentGrade); // 학년을 문자열로 변경 
 		String strClass = new DecimalFormat("00").format(studentClass); // 반을 00 형식화
 		String strNumber = new DecimalFormat("00").format(studentNumber); // 숫자를 00 형식화
 		return Integer.parseInt(strGrade+strClass+strNumber);
 	}
 	
-	Student(String studentName, int studentGrade, int studentClass, int studentNumber) throws Exception {
+	Student(String studentName, int studentGrade, int studentClass, int studentNumber) {
+		
+		if (!isValidStudent(studentGrade, studentClass, studentNumber)) {
+			return; // 유효하지 않은 학년, 반, 이름이면 객체를 생성하지 않음
+		}
+		
 		setStudentName(studentName);
 		setStudentGrade(studentGrade);
 		setStudentClass(studentClass);
 		setStudentNumber(studentNumber);
 		return;
+	}
+	
+	
+	//학년, 반, 번호의 유효성 검사
+	static boolean isValidStudent(int studentGrade, int studentClass, int studentNumber) {
+		return (isValidStudnetGrade(studentGrade)&&isValidStudentClass(studentClass)&&isValidStudentNumber(studentNumber));
+	}
+	
+	private static boolean isValidStudnetGrade(int studentGrade) {
+		return 1<=studentGrade&&studentGrade<=3;
+	}
+	
+	private static boolean isValidStudentClass(int studentClass) {
+		return 1<=studentClass&&studentClass<=99;
+	}
+	private static boolean isValidStudentNumber(int studentNumber) {
+		return 1<=studentNumber&&studentNumber<=99;
 	}
 	
 	//Setter : 학생명
@@ -41,33 +72,23 @@ class Student implements Comparable<Student> {
 	}
 	
 	//Setter : 학년
-	private void setStudentGrade(int studentGrade) throws Exception {
-		if (studentGrade<1||studentGrade>3) { // 학번이 1,2,3 이면 예외
-			throw new Exception("학년 잘 못 입력함");
-		}
-		
+	private void setStudentGrade(int studentGrade) {
 		this.studentGrade = studentGrade;
 		return;
 	}
-	
+
 	//Setter : 반
-	private void setStudentClass(int studentClass) throws Exception {
-		if (studentClass<1||studentClass>99) { //반이 1~99에서 벗어나면 예외
-			throw new Exception("반을 잘 못 입력함");
-		}
+	private void setStudentClass(int studentClass) {
 		this.studentClass = studentClass;
 		return;
 	}
-	
+
 	//Setter : 번호
-	private void setStudentNumber(int studentNumber) throws Exception {
-		if (studentNumber<1||studentNumber>99) { //번호가 1~99에서 벗어나면 예외
-			throw new Exception("번호를 잘 못 입력함");
-		}
+	private void setStudentNumber(int studentNumber) {
 		this.studentNumber = studentNumber;
 		return;
 	}
-	
+
 	//getter
 	public String getStudentName() {return studentName;}
 	public int getStudnetGrade() {return studentGrade;}
@@ -85,7 +106,7 @@ class Student implements Comparable<Student> {
 	}
 	
 	@Override
-	public int hashCode() { // 학번에 따라 hashCode 부여
+	public int hashCode() { // 학생 객체의 학번에 따라 hashCode 부여
 		return Objects.hash(getStudentID());
 	}
 	
