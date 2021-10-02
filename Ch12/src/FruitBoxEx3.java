@@ -10,7 +10,6 @@ import java.util.*;
 	 * <? super T> : 지네릭 참조변수가 다룰 수 있는  지네릭 클랙스 객체의 타입변수 하한을 T로 지정. T와 그 조상
 	 * <?> : 지네릭 클래스 객체의 상하한 없음. <? extends Object>와 동일
 	 * 
-	 * 
 	 * [예시]
 	 * - ArrayList<Tv> list = new ArrayList<Tv>(); // Ok
 	 *  : 참조변수 list를 선언할 때, 이 참조변수는 ArrayList<Tv>를 참조한다고 선언함.
@@ -98,7 +97,8 @@ class Juicer {
 		
 		StringBuffer tmp = new StringBuffer("");
 		
-		for (Fruit3 f : box.getList() ) { //box의 list에 있는 Fruit3 및 그 자손 객체들에 대하여
+		for (Fruit3 f : box.getList() ) {
+			// 향상된 for문 : for( 타입변수명 : 배열 또는 컬렉션) -> 지정 배열, 컬렉션의 요소에 하나씩 접근 (읽기만 가능)
 			tmp.append(f).append(" "); // 문자열+" "을 tmp에 덧붙여라.
 		}
 		
