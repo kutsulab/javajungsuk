@@ -1,5 +1,5 @@
 
-/* ========================================================================
+	/* ========================================================================
 	 *  Java의 정석 3판 p.811 예제 14-7 : Function의 합성, Predicate의 결합
 	 * ========================================================================
 	 *
@@ -38,7 +38,8 @@
 	 *     4. 상등 여부를 판단하는 Predicate
 	 *     
 	 *       static <T> Predicate<T> isEqual(Object tartgetRef)
-	 *       지정 객체와 같은 지의 여부를 판단하는 Perdicate를 반환
+	 *       - 지정 객체와 같은 지의 여부를 판단하는 Perdicate를 반환
+	 *       - 등가비교연산자 == 을 이용해서 비교하는 것이 아닌, equals 메서드를 기반으로 비교한다.
 	 *       
 	 * ========================================================================
 	 */
@@ -71,11 +72,19 @@ public class LambdaEx7 {
 		
 		String str1 = "abc";
 		String str2 = "abc";
+		String str3 = "abcd";
+		String str4 = new String("abc");
 		
 		Predicate<String> t = Predicate.isEqual(str1); // 입력값이 str과 같으면 true
 		boolean result = t.test(str2);
-		System.out.println("t.test(str2) : "+result);
+		System.out.println("t.test(str2) : "+result); // 서로 같음
 		
+		boolean result2 = t.test(str3);
+		System.out.println("t.test(str3) : "+result2); // 서로 다름
+		
+		boolean result3 = t.test(str4);
+		System.out.println("t.test(str4) : "+result3);
+		// isEqual이 == 기반으로 비교를 하는 것이 아닌 equals를 기반으로 객체가 다른지의 여부를 판단함을 알 수 있다.
 	}
 
 }
