@@ -20,6 +20,8 @@
 	 *        
 	 *        예) ObjectIntConsumer<String> : 입력이 String 타입과 int 타입이고, 반환값이 없는 Consumer <메서드 : void accept (String str, int i)>
 	 *      
+	 *      4) BFunction<T> : 입력이 T, 반환타입이 B 타입인 Function 
+	 *      
 	 *      4) AToBFunction : 입력이 A타입, 반환타입이 B타입인 Function
 	 *         메서드 : B applyAsB(A a)
 	 *        
